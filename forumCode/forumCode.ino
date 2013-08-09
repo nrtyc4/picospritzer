@@ -1,7 +1,6 @@
 #include <Wire.h>  //I2C library
 
 const byte LCDa = 40; //LCD address on I2C bus
-int ret = 0;
 
 const byte LCD_CLEAR[2] = {0xFE, 0x51};
 const byte LCD_CLEAR_COUNT = 2;
@@ -11,7 +10,7 @@ const byte LCD_SET_CURSOR_COUNT = 2;
 
 //const byte LCD_UNDERLINE_CURSOR_ON[2] = {0xFE, 0x47};
 //const byte LCD_UNDERLINE_CURSOR_ON_COUNT = 2;
-//
+
 //const byte LCD_UNDERLINE_CURSOR_OFF[2] = {0xFE, 0x48};
 //const byte LCD_UNDERLINE_CURSOR_OFF_COUNT = 2;
 
@@ -62,27 +61,6 @@ void setup()
     Wire.beginTransmission(LCDa);
     for (byte i=47; i<66; i++) { Wire.write(i); }
     Wire.endTransmission();
-
-//    //Set cursor to 4th line
-//    Wire.beginTransmission(LCDa);
-//    Wire.write(LCD_SET_CURSOR, LCD_SET_CURSOR_COUNT);
-//    Wire.write(0x54);
-//    Wire.endTransmission();
-//    delayMicroseconds(100);
-    
-//    //Underline cursor ON
-//    Wire.beginTransmission(LCDa);
-//    Wire.write(LCD_UNDERLINE_CURSOR_ON, LCD_UNDERLINE_CURSOR_ON_COUNT);
-//    Wire.endTransmission();
-//    delayMicroseconds(1500);
-//
-//    delay(3000);
-   
-//    //Underline cursor ON
-//    Wire.beginTransmission(LCDa);
-//    Wire.write(LCD_UNDERLINE_CURSOR_OFF, LCD_UNDERLINE_CURSOR_OFF_COUNT);
-//    Wire.endTransmission();
-//    delayMicroseconds(1500);
 
 }
 
